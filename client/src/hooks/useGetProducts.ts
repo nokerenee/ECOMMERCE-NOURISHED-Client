@@ -3,7 +3,7 @@ import axios from "axios";
 import { useGetToken } from "./useGetToken";
 
 export const useGetProducts = () => {
-  const [products, setProducts] = useState();
+  const [products, setProducts] = useState([]);
   const { headers } = useGetToken();
 
   const fetchProducts = async () => {

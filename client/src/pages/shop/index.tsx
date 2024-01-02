@@ -6,11 +6,11 @@ export const ShopPage = () => {
   return (
     <div className="shop">
       <div className="products">
-        {/* {products.map((product) => (
+        {products.map((product) => (
           <div>
             {product.productName} {product.price}
           </div>
-        ))} */}
+        ))}
       </div>
     </div>
   );
