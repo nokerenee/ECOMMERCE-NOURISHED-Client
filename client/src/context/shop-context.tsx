@@ -13,6 +13,7 @@ export interface IShopContext {
   getTotalCartAmount: () => number;
   checkout: () => void;
   availableMoney: number;
+  purchasedItems: IProduct[];
 }
 
 const defaultVal: IShopContext = {
@@ -23,6 +24,7 @@ const defaultVal: IShopContext = {
   getTotalCartAmount: () => 0,
   checkout: () => null,
   availableMoney: 0,
+  purchasedItems: [],
 };
 
 export const ShopContext = createContext<IShopContext>(defaultVal);
@@ -30,6 +32,7 @@ export const ShopContext = createContext<IShopContext>(defaultVal);
 export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState<{ string: number } | {}>({});
   const [availableMoney, setAvailableMoney] = useState<number>(0);
+  const [purchasedItems, setPurchasedItems] = useState<IProduct[]>([]);
 
   const { products } = useGetProducts();
   const { headers } = useGetToken();
@@ -44,6 +47,20 @@ export const ShopContextProvider = (props) => {
         { headers }
       );
       setAvailableMoney(res.data.availableMoney);
+    } catch (err) {
+      alert("ERROR: Something went wrong.");
+    }
+  };
+
+  const fetchPurchasedItems = async () => {
+    try {
+      const res = await axios.get(
+        `http://localhost:3001/product/purchased-items/${localStorage.getItem(
+          "userID"
+        )}`,
+        { headers }
+      );
+      setPurchasedItems(res.data.purchasedItems);
     } catch (err) {
       alert("ERROR: Something went wrong.");
     }
@@ -97,6 +114,7 @@ export const ShopContextProvider = (props) => {
       });
       setCartItems({});
       fetchAvailableMoney();
+      fetchPurchasedItems();
       navigate("/");
     } catch (err) {
       console.log(err);
@@ -105,6 +123,7 @@ export const ShopContextProvider = (props) => {
 
   useEffect(() => {
     fetchAvailableMoney();
+    fetchPurchasedItems();
   }, []);
 
   const contextValue: IShopContext = {
@@ -115,6 +134,7 @@ export const ShopContextProvider = (props) => {
     getTotalCartAmount,
     checkout,
     availableMoney,
+    purchasedItems,
   };
 
   return (
