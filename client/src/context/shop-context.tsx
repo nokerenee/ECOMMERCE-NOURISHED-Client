@@ -114,6 +114,7 @@ export const ShopContextProvider = (props) => {
       });
       setCartItems({});
       fetchAvailableMoney();
+      fetchPurchasedItems();
       navigate("/");
     } catch (err) {
       console.log(err);
