@@ -15,6 +15,11 @@ export const ShopPage = () => {
 
   return (
     <div className="shop">
+      <img
+        src="https://www.naturemade.com/cdn/shop/articles/healthy-foods-to-eat_960x.jpg?v=1611988563"
+        alt="Healthy Foods"
+        className="shop-image"
+      />
       <div className="products">
         {products.map((product) => (
           <Product key={product._id} product={product} />

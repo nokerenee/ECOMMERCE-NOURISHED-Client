@@ -1,20 +1,29 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import {
+  faShoppingCart,
+  faRightFromBracket,
+} from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
 import { IShopContext, ShopContext } from "../context/shop-context";
 
 export const Navbar = () => {
-  const { availableMoney, isAuthenticated, setIsAuthenticated } =
-    useContext<IShopContext>(ShopContext);
+  const {
+    availableMoney,
+    isAuthenticated,
+    setIsAuthenticated,
+    getTotalCartAmount,
+  } = useContext<IShopContext>(ShopContext);
   const logout = () => {
     setIsAuthenticated(false);
   };
 
+  const subtotalAmount = getTotalCartAmount();
+
   return (
     <div className="navbar">
       <div className="navbar-title">
-        <h1>Nourished</h1>
+        <h1>Nourished.</h1>
       </div>
 
       <div className="navbar-links">
@@ -25,10 +34,11 @@ export const Navbar = () => {
             <Link to="/checkout">
               <FontAwesomeIcon icon={faShoppingCart} />
             </Link>
+            <span>${subtotalAmount.toFixed(2)}</span>
+            {/* <span>${availableMoney.toFixed(2)}</span> */}
             <Link to="/auth" onClick={logout}>
-              Logout
+              <FontAwesomeIcon icon={faRightFromBracket} />
             </Link>
-            <span>${availableMoney.toFixed(2)}</span>
           </>
         )}
       </div>

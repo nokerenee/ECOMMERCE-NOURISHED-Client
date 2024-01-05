@@ -26,7 +26,7 @@ export const Product = (props: Props) => {
         Add To Cart {cartItemCount > 0 && <>({cartItemCount})</>}
       </button>
       <div className="stock-quantity">
-        {stockQuantity === 0 && <h1>OUT OF STOCK</h1>}
+        {stockQuantity === 0 && <h2>OUT OF STOCK</h2>}
       </div>
     </div>
   );
