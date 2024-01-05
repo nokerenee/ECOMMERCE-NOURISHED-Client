@@ -17,12 +17,12 @@ body {
   padding: 10px;
 }
 
-.navbarLinks {
+.navbar-links {
   display: flex;
   margin-right: 20px;
 }
 
-.navbarLinks span {
+.navbar-links span {
   margin: 0px;
   padding: 0px;
   display: flex;

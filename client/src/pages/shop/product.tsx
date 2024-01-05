@@ -12,8 +12,7 @@ export const Product = (props: Props) => {
 
   const { addToCart, getCartItemCount } = useContext<IShopContext>(ShopContext);
 
-  const count = getCartItemCount(_id);
-  console.log(count);
+  const cartItemCount = getCartItemCount(_id);
 
   return (
     <div className="product">
@@ -21,10 +20,10 @@ export const Product = (props: Props) => {
       <div className="description">
         <h3>{productName}</h3>
         <p>{description}</p>
-        <p>{price}</p>
+        <p>${price}</p>
       </div>
       <button className="add-to-cart-bttn" onClick={() => addToCart(_id)}>
-        Add To Cart {count > 0 && <>({count})</>}
+        Add To Cart {cartItemCount > 0 && <>({cartItemCount})</>}
       </button>
       <div className="stock-quantity">
         {stockQuantity === 0 && <h1>OUT OF STOCK</h1>}

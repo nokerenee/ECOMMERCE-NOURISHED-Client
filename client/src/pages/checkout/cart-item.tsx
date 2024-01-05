@@ -1,15 +1,17 @@
 import { useContext } from "react";
 import { IProduct } from "../../models/interfaces";
-import { IShopContext, ShopContext } from "../../context/shop-context";
+import { ShopContext } from "../../context/shop-context";
 
 interface Props {
   product: IProduct;
 }
 
 export const CartItem = (props: Props) => {
-  const { _id, imageURL, productName, price } = props.product;
+  const { _id, productName, description, price, stockQuantity, imageURL } =
+    props.product;
   const { addToCart, removeFromCart, updateCartItemCount, getCartItemCount } =
-    useContext<IShopContext>(ShopContext);
+    useContext(ShopContext);
+
   const cartItemCount = getCartItemCount(_id);
 
   return (
@@ -22,7 +24,7 @@ export const CartItem = (props: Props) => {
       <div className="count-handler">
         <button onClick={() => removeFromCart(_id)}> - </button>
         <input
-          type="number"
+          // type="number"
           value={cartItemCount}
           onChange={(e) => updateCartItemCount(Number(e.target.value), _id)}
         />
