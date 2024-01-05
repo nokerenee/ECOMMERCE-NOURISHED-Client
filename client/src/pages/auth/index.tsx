@@ -9,7 +9,8 @@ import "./styles.css";
 export const AuthPage = () => {
   return (
     <div className="auth">
-      <Register /> <Login />
+      <Register /> 
+      <Login />
     </div>
   );
 };
@@ -66,21 +67,23 @@ const Register = () => {
 const Login = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [, setCookies] = useCookies(["access_token"]);
+
+  const [_, setCookies] = useCookies(["access_token"]);
+  const { setIsAuthenticated } = useContext<IShopContext>(ShopContext);
 
   const navigate = useNavigate();
 
-  const { setIsAuthenticated } = useContext<IShopContext>(ShopContext);
-
   const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
+
     try {
       const result = await axios.post("http://localhost:3001/user/login", {
         username,
         password,
       });
+
       setCookies("access_token", result.data.token);
-      localStorage.setItem("userID", result.data.userID);
+      window.localStorage.setItem("userID", result.data.userID);
       setIsAuthenticated(true);
       navigate("/");
     } catch (err) {

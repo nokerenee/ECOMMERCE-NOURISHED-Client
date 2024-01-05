@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-.cartItem {
+.cart-item {
   width: 700px;
   height: 250px;
   display: flex;
@@ -16,17 +16,17 @@
   margin: 30px;
 }
 
-.cartItem img {
+.cart-item img {
   width: 200px;
   margin-left: 50px;
 }
 
-.cartItem .description {
+.cart-item .description {
   width: 100%;
   font-size: 30px;
 }
 
-.countHandler input {
+.count-handler input {
   width: 40px;
   text-align: center;
   font-weight: bolder;

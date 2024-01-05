@@ -17,10 +17,7 @@ export const ShopPage = () => {
     <div className="shop">
       <div className="products">
         {products.map((product) => (
-          <div>
-            {product.productName} {product.price}
-            <Product product={product} />
-          </div>
+          <Product key={product._id} product={product} />
         ))}
       </div>
     </div>
