@@ -25,8 +25,20 @@
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   place-items: center;
+}
+
+@media (max-width: 850px) {
+  .purchased-items {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .purchased-items {
+    grid-template-columns: 1fr;
+  }
 }
 
 .purchased-items .item {
@@ -52,7 +64,7 @@
 .purchased-items button {
   width: 150px;
   height: 50px;
-  background-color: #c6bcb6;
+  background-color: #d3d3d3;
   color: black;
   border-color: black;
   border-radius: 15px;
