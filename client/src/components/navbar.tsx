@@ -9,7 +9,6 @@ import { IShopContext, ShopContext } from "../context/shop-context";
 
 export const Navbar = () => {
   const {
-    availableMoney,
     isAuthenticated,
     setIsAuthenticated,
     getTotalCartAmount,
@@ -35,7 +34,6 @@ export const Navbar = () => {
               <FontAwesomeIcon icon={faShoppingCart} />
             </Link>
             <span>${subtotalAmount.toFixed(2)}</span>
-            {/* <span>${availableMoney.toFixed(2)}</span> */}
             <Link to="/auth" onClick={logout}>
               <FontAwesomeIcon icon={faRightFromBracket} />
             </Link>

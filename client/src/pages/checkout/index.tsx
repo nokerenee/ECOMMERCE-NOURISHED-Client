@@ -17,7 +17,7 @@ export const CheckoutPage = () => {
   return (
     <div className="cart">
       <div>
-        <h1>Your Cart Items</h1>
+        <h1>Shopping Cart</h1>
       </div>
       <div className="cart">
         {products.map((product: IProduct) => {

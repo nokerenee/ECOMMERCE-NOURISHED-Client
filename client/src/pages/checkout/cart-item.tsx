@@ -24,7 +24,6 @@ export const CartItem = (props: Props) => {
       <div className="count-handler">
         <button onClick={() => removeFromCart(_id)}> - </button>
         <input
-          // type="number"
           value={cartItemCount}
           onChange={(e) => updateCartItemCount(Number(e.target.value), _id)}
         />

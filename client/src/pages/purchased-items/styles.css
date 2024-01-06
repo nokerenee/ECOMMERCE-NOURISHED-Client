@@ -1,5 +1,12 @@
+.purchased-items-page h1 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 2em;
+  color: black;
+}
+
 .purchased-items {
-  margin-top: 100px;
+  margin-top: 60px;
   width: 100%;
   height: auto;
   display: grid;
@@ -16,13 +23,15 @@
 }
 
 .purchased-items .item img {
-  width: 200px;
-  height: 200px;
-
+  width: 250px;
+  height: 250px;
+  border-radius: 15px;
   background-color: #ccc;
   background-size: cover;
   background-position: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .purchased-items button {
