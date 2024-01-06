@@ -1,8 +1,23 @@
 .auth {
+  position: relative;
+  margin: 0 auto; /* Center the section horizontally */
+}
+
+.auth-banner {
+  background-image: url("https://www.naturemade.com/cdn/shop/articles/healthy-foods-to-eat_960x.jpg?v=1611988563");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 110px 0;
+}
+
+.auth-login {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: auto;
   width: 100%;
   background-color: #ddeedd;
   /* text-align: center; */
@@ -17,8 +32,9 @@
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  margin: 20px;
-  width: 100%;
+  margin: 50px;
+  width: 350px;
+  height: 300px;
 }
 
 .form-group {

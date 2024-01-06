@@ -1,14 +1,36 @@
 .cart {
+  position: relative;
+  margin: 0 auto; /* Center the section horizontally */
+}
+
+.cart-banner {
+  background-image: url("https://www.naturemade.com/cdn/shop/articles/healthy-foods-to-eat_960x.jpg?v=1611988563");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 110px 0;
+}
+
+.cart-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.cart h1 {
+.cart-page h1 {
   text-align: center;
   margin-top: 50px;
   font-size: 2em;
+  color: black;
+}
+
+.cart-page h2 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.5em;
   color: black;
 }
 
