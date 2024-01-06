@@ -15,11 +15,20 @@ export const ShopPage = () => {
 
   return (
     <div className="shop">
-      <img
-        src="https://www.naturemade.com/cdn/shop/articles/healthy-foods-to-eat_960x.jpg?v=1611988563"
-        alt="Healthy Foods"
-        className="shop-image"
-      />
+      <section className="welcome-banner">
+        <div className="translucent-container">
+          <div className="welcome-text">
+            <h1>Welcome to Nourished</h1>
+            <p>Your Culinary Haven for Fresh, Healthy, Homemade Delights!</p>
+            {/* <a href="#menu" className="explore-button">
+            Explore Our Menu
+          </a> */}
+          </div>
+        </div>
+      </section>
+      <div className="menu-title">
+        <h2>Menu</h2>
+      </div>
       <div className="products">
         {products.map((product) => (
           <Product key={product._id} product={product} />
