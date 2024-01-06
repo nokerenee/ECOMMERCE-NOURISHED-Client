@@ -22,7 +22,7 @@ body {
   /* background-color:  #b0aac0; */
   /* background-color: #e4d1d1; */
   background-color: #fff;
-  color: #b0aac0;
+  color: #ff9999;
   padding: 20px;
   width: 100%;
 }
@@ -39,7 +39,7 @@ body {
 }
 
 .navbar-links span {
-  color: #b0aac0;
+  color: #ff9999;
   text-decoration: none;
   font-size: 20px;
   margin-right: 20px;
@@ -49,7 +49,7 @@ body {
 }
 
 .navbar a {
-  color: #b0aac0;
+  color: #ff9999;
   text-decoration: none;
   font-size: 20px;
   margin-right: 20px;
