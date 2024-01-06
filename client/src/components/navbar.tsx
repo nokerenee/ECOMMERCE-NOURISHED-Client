@@ -8,11 +8,8 @@ import { useContext } from "react";
 import { IShopContext, ShopContext } from "../context/shop-context";
 
 export const Navbar = () => {
-  const {
-    isAuthenticated,
-    setIsAuthenticated,
-    getTotalCartAmount,
-  } = useContext<IShopContext>(ShopContext);
+  const { isAuthenticated, setIsAuthenticated, getTotalCartAmount } =
+    useContext<IShopContext>(ShopContext);
   const logout = () => {
     setIsAuthenticated(false);
   };
@@ -29,6 +26,7 @@ export const Navbar = () => {
         {isAuthenticated && (
           <>
             <Link to="/">Shop</Link>
+            <Link to="/about">About</Link>
             <Link to="/purchased-items">Purchases</Link>
             <Link to="/checkout">
               <FontAwesomeIcon icon={faShoppingCart} />

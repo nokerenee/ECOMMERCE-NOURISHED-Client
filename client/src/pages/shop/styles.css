@@ -1,6 +1,6 @@
 .shop {
   position: relative;
-  margin: 0 auto; /* Center the section horizontally */
+  margin: 0 auto;
 }
 
 .welcome-banner {
@@ -10,7 +10,7 @@
   width: 100%;
   color: white;
   text-align: center;
-  padding: 100px 0; /* Adjust the padding as needed */
+  padding: 100px 0;
 }
 
 .translucent-container {
@@ -106,10 +106,10 @@
   transition: 0.3s ease-in;
 }
 
-.add-to-cart-bttn {
+.product button {
   width: 150px;
   height: 50px;
-  background-color: #d3d3d3;
+  background-color: #ddeedd;
   color: black;
   border-color: black;
   border-radius: 15px;
@@ -117,7 +117,7 @@
   cursor: pointer;
 }
 
-.add-to-cart-bttn:hover {
+.product button:hover {
   background-color: rgb(19, 19, 19);
   color: white;
   cursor: pointer;

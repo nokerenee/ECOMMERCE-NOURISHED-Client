@@ -1,6 +1,7 @@
 .cart {
   position: relative;
-  margin: 0 auto; /* Center the section horizontally */
+  margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .cart-banner {
@@ -72,7 +73,7 @@
 .checkout button {
   width: 150px;
   height: 50px;
-  background-color: #d3d3d3;
+  background-color: #ddeedd;
   color: black;
   border-color: black;
   border-radius: 15px;

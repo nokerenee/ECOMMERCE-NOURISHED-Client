@@ -1,6 +1,6 @@
 .purchase {
   position: relative;
-  margin: 0 auto; /* Center the section horizontally */
+  margin: 0 auto;
 }
 
 .purchase-banner {
@@ -64,7 +64,7 @@
 .purchased-items button {
   width: 150px;
   height: 50px;
-  background-color: #d3d3d3;
+  background-color: #ddeedd;
   color: black;
   border-color: black;
   border-radius: 15px;

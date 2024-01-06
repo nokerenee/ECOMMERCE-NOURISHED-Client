@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { Navbar } from "./components/navbar";
+import { Footer } from "./components/footer";
 import { ShopPage } from "./pages/shop";
+import { AboutPage } from "./pages/about";
 import { AuthPage } from "./pages/auth";
 import { CheckoutPage } from "./pages/checkout";
 import { PurchasedItemsPage } from "./pages/purchased-items";
@@ -15,10 +17,12 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<ShopPage />} />
+            <Route path="/about" element={<AboutPage />} />
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/purchased-items" element={<PurchasedItemsPage />} />
           </Routes>
+          <Footer />
         </ShopContextProvider>
       </Router>
     </div>
