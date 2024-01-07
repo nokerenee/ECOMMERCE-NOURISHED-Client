@@ -1,6 +1,6 @@
-# Project Title
+# NOURISHED.
 
-NOURISHED. - Ecommerce Meal Delivey Service Website
+Ecommerce Meal Delivey Service Website
 
 ## Table of Contents
 - [Requirements](#requirements)
