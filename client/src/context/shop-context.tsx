@@ -14,8 +14,6 @@ export interface IShopContext {
   getCartItemCount: (itemId: string) => number;
   getTotalCartAmount: () => number;
   checkout: (customerID: string) => void;
-  availableMoney: number;
-  fetchAvailableMoney: () => void;
   purchasedItems: IProduct[];
   isAuthenticated: boolean;
   setIsAuthenticated: (isAuthenticated: boolean) => void;
@@ -26,7 +24,6 @@ export const ShopContext = createContext<IShopContext | null>(null);
 export const ShopContextProvider = (props) => {
   const [cookies, setCookies] = useCookies(["access_token"]);
   const [cartItems, setCartItems] = useState<{ string: number } | {}>({});
-  const [availableMoney, setAvailableMoney] = useState<number>(0);
   const [purchasedItems, setPurchasedItems] = useState<IProduct[]>([]);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
     cookies.access_token !== null
@@ -36,24 +33,14 @@ export const ShopContextProvider = (props) => {
   const { headers } = useGetToken();
   const navigate = useNavigate();
 
-  const fetchAvailableMoney = async () => {
-      const res = await axios.get(
-        `http://localhost:3001/user/available-money/${localStorage.getItem(
-          "userID"
-        )}`,
-        { headers }
-      );
-      setAvailableMoney(res.data.availableMoney);
-  };
-
   const fetchPurchasedItems = async () => {
-      const res = await axios.get(
-        `http://localhost:3001/product/purchased-items/${localStorage.getItem(
-          "userID"
-        )}`,
-        { headers }
-      );
-      setPurchasedItems(res.data.purchasedItems);
+    const res = await axios.get(
+      `http://localhost:3001/product/purchased-items/${localStorage.getItem(
+        "userID"
+      )}`,
+      { headers }
+    );
+    setPurchasedItems(res.data.purchasedItems);
   };
 
   const getCartItemCount = (itemId: string): number => {
@@ -109,7 +96,6 @@ export const ShopContextProvider = (props) => {
       );
       setCartItems({});
       setPurchasedItems(res.data.purchasedItems);
-      fetchAvailableMoney();
       fetchPurchasedItems();
       fetchProducts();
       navigate("/");
@@ -118,9 +104,6 @@ export const ShopContextProvider = (props) => {
       switch (err.response.data.type) {
         case ProductErrors.NO_PRODUCT_FOUND:
           errorMessage = "No product found";
-          break;
-        case ProductErrors.NO_AVAILABLE_MONEY:
-          errorMessage = "Not enough money";
           break;
         case ProductErrors.NOT_ENOUGH_STOCK:
           errorMessage = "Not enough stock";
@@ -135,7 +118,6 @@ export const ShopContextProvider = (props) => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      fetchAvailableMoney();
       fetchPurchasedItems();
     }
   }, [isAuthenticated]);
@@ -154,8 +136,6 @@ export const ShopContextProvider = (props) => {
     getCartItemCount,
     getTotalCartAmount,
     checkout,
-    availableMoney,
-    fetchAvailableMoney,
     purchasedItems,
     isAuthenticated,
     setIsAuthenticated,

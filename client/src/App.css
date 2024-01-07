@@ -1,20 +1,35 @@
 .App {
   text-align: center;
+  background-color: #fff;
+  /* background-color:  #e4d1d1; */
+  min-height: 100vh;
+  min-width: 100vh;
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  text-transform: uppercase;
+  overflow-x: hidden;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(19, 19, 19);
-  color: white;
-  padding: 10px;
+  /* background-color:  #b0aac0; */
+  background-color: #f9f5f1 !important;
+  color: #bc8f8f;
+  padding: 20px;
+  width: 100%;
+}
+
+.navbar-title {
+  display: flex;
+  margin-left: 10px;
+  align-items: center;
 }
 
 .navbar-links {
@@ -23,15 +38,49 @@ body {
 }
 
 .navbar-links span {
-  margin: 0px;
+  color: #bc8f8f;
+  text-decoration: none;
+  font-size: 18px;
+  margin-right: 20px;
   padding: 0px;
   display: flex;
   align-items: center;
 }
 
 .navbar a {
-  color: white;
+  color: #bc8f8f;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   margin-right: 20px;
+}
+
+.footer {
+  background-color: #f9f5f1 !important;
+  color: #bc8f8f;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.footer-content-top {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-content-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.footer-logo {
+  width: 200px;
+  height: auto;
+  margin-right: 10px;
 }

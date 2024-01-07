@@ -9,8 +9,11 @@ import "./styles.css";
 export const AuthPage = () => {
   return (
     <div className="auth">
-      <Register /> 
-      <Login />
+      <section className="auth-banner"></section>
+      <div className="auth-login">
+        <Register />
+        <Login />
+      </div>
     </div>
   );
 };

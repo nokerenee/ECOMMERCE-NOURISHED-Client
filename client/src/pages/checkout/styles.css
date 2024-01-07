@@ -1,16 +1,46 @@
 .cart {
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.cart-banner {
+  background-image: url("https://www.naturemade.com/cdn/shop/articles/healthy-foods-to-eat_960x.jpg?v=1611988563");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 110px 0;
+}
+
+.cart-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.cart-page h1 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 2em;
+  color: black;
+}
+
+.cart-page h2 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.5em;
+  color: black;
+}
+
 .cart-item {
   width: 700px;
   height: 250px;
   display: flex;
-
   align-items: center;
+  background-color: #fff;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   border-radius: 25px;
   margin: 30px;
@@ -18,7 +48,8 @@
 
 .cart-item img {
   width: 200px;
-  margin-left: 50px;
+  margin-left: 0px;
+  border-radius: 25px;
 }
 
 .cart-item .description {
@@ -32,13 +63,26 @@
   font-weight: bolder;
 }
 
+.count-handler button {
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+  text-align: center;
+}
+
 .checkout button {
   width: 150px;
   height: 50px;
+  background-color: #ddeedd;
+  color: black;
+  border-color: black;
+  border-radius: 15px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.checkout button:hover {
   background-color: rgb(19, 19, 19);
   color: white;
-  border: none;
-  border-radius: 8px;
-  margin: 10px;
   cursor: pointer;
 }

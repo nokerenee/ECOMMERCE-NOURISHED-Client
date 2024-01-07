@@ -16,19 +16,18 @@ export const CartItem = (props: Props) => {
 
   return (
     <div className="cart-item">
-      <img src={imageURL} />
+      <img src={imageURL} alt={productName} />
       <div className="description">
         <h3>{productName}</h3>
         <p>Price: ${price}</p>
       </div>
       <div className="count-handler">
-        <button onClick={() => removeFromCart(_id)}> - </button>
+        <button onClick={() => addToCart(_id)}> + </button>
         <input
-          // type="number"
           value={cartItemCount}
           onChange={(e) => updateCartItemCount(Number(e.target.value), _id)}
         />
-        <button onClick={() => addToCart(_id)}> + </button>
+        <button onClick={() => removeFromCart(_id)}> - </button>
       </div>
     </div>
   );

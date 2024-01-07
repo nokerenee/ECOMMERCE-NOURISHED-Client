@@ -1,10 +1,44 @@
+.purchase {
+  position: relative;
+  margin: 0 auto;
+}
+
+.purchase-banner {
+  background-image: url("https://www.naturemade.com/cdn/shop/articles/healthy-foods-to-eat_960x.jpg?v=1611988563");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 110px 0;
+}
+
+.purchased-items-page h1 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 2em;
+  color: black;
+}
+
 .purchased-items {
-  margin-top: 100px;
+  margin-top: 60px;
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   place-items: center;
+}
+
+@media (max-width: 850px) {
+  .purchased-items {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .purchased-items {
+    grid-template-columns: 1fr;
+  }
 }
 
 .purchased-items .item {
@@ -16,24 +50,26 @@
 }
 
 .purchased-items .item img {
-  width: 200px;
-  height: 200px;
-
+  width: 250px;
+  height: 250px;
+  border-radius: 15px;
   background-color: #ccc;
   background-size: cover;
   background-position: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .purchased-items button {
-  background-color: transparent;
-  border: 2px solid rgb(19, 19, 19);
-  min-width: 100px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  width: 150px;
+  height: 50px;
+  background-color: #ddeedd;
+  color: black;
+  border-color: black;
   border-radius: 15px;
+  margin: 10px;
+  cursor: pointer;
 }
 
 .purchased-items button:hover {

@@ -1,0 +1,32 @@
+.about {
+  position: relative;
+  margin: 0 auto;
+}
+
+.about-banner {
+  background-image: url("https://www.naturemade.com/cdn/shop/articles/healthy-foods-to-eat_960x.jpg?v=1611988563");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 110px 0;
+}
+
+.about-page {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1em;
+  margin-bottom: 50px;
+}
+
+.about-page p {
+  margin-bottom: 20px; /* Add spacing between paragraphs */
+}
+
+.about-page h1 {
+  margin-top: 50px;
+  font-size: 2em;
+  color: black;
+}
