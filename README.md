@@ -3,21 +3,21 @@
 NOURISHED. - Ecommerce Meal Delivey Service Website
 
 ## Table of Contents
-- [Requirements]
-- [Installation]
-- [Configuration]
-- [Credits]
-- [Contact Information]
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Credits](#credits)
+- [Contact Information](#contact-information)
 
 ## Requirements
 
-Node.js installed
-MongoDB installed
-AWS account
-Twingate account
-EC2 instance created
-SSH key pair for EC2 instance
-Twingate Connector installed on the EC2 instance
+- Node.js installed
+- MongoDB installed
+- AWS account
+- Twingate account
+- EC2 instance created
+- SSH key pair for EC2 instance
+- Twingate Connector installed on the EC2 instance
 
 ## Installation
 
@@ -56,19 +56,20 @@ Step 2: Configure Twingate
 3. Install Twingate Connector on your EC2 instance following the Twingate documentation.
 
 Step 3: SSH into EC2 Instance
-ssh -i path/to/your-key.pem ec2-user@your-ec2-instance-ip
+1. In your terminal:
+   ssh -i path/to/your-key.pem ec2-user@your-ec2-instance-ip
 
 Step 4: Access the Application
 1. Open your browser and visit 'http://your-ec2-instance-ip:3001' to view the deployed app.
 
 ## Credits
 
-Twingate
-MongoDB Atlas
-AWS EC2
-FontAwesome
+- Twingate
+- MongoDB Atlas
+- AWS EC2
+- FontAwesome
 
 ## Contact Information
 
-GitHub: https://github.com/nokerenee
-Email: nrkelly57@gmail.com
+- GitHub: https://github.com/nokerenee
+- Email: nrkelly57@gmail.com
